@@ -1,0 +1,1099 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>IPI - Architectures distribuées</title>
+    
+    <meta name="description" content="" />
+    <meta name="author" content="Pierre-Julien VILLOUD" />
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/idea.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="my-navbar">
+  <a class="navbar-brand" href="index.html">
+    <img src="img/ipi.jpg" width="30" height="30" alt=""> Cours MDD 324
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav nav-pills mr-auto">
+      
+    </ul>
+    <span class="navbar-text">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <!--a class="btn btn-primary" href="https://github.com/pjvilloud/ipi-java-350-delivery-ex" target="_blank"><i class="fa fa-icon fa-gamepad"></i></a-->
+            &nbsp;
+            <a class="btn btn-primary" href="mailto:pjvilloud@protonmail.com"><i class="fa fa-icon fa-envelope"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="https://github.com/pjvilloud" target="_blank"><i class="fa fa-icon fa-github"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="https://linkedin.com/pjvilloud" target="_blank"><i class="fa fa-icon fa-linkedin"></i></a>&nbsp;
+            <a class="btn btn-primary" href="#" id="numSlide">1</a>
+        </div>
+    </span>
+  </div>
+</nav>
+<div class="progress">
+  <div id="progress" class="progress-bar" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container-fluid" id="impress">
+
+    <div id="accueil" class="step slide" data-rel-x="0" data-y=0>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container text-center">
+            <h1 class="display-3">Bienvenue !</h1>
+            <p class="lead">
+                <h2>Pierre-Julien VILLOUD</h2>
+                <div class="big-top-margin">
+                    <img src="img/pjvilloud.jpg" class="img-bienvenue rounded mx-auto d-block" alt="Pierre-Julien VILLOUD">
+                </div>
+                <div class="big-top-margin">
+                    <h3><i class="fa fa-icon fa-envelope-square"></i>&nbsp;<a href="mailto:pjvilloud@protonmail.com">pjvilloud@protonmail.com</a></h3>
+                    <h3><i class="fa fa-icon fa-github-square"></i>&nbsp;<a href="https://github.com/pjvilloud" target="_blank">https://github.com/pjvilloud</a></h3>
+                    <h3><i class="fa fa-icon fa-linkedin-square"></i>&nbsp;<a href="https://linkedin.com/pjvilloud" target="_blank">https://linkedin.com/pjvilloud</a></h3>
+                    <h3><i class="fa fa-icon fa-globe"></i>&nbsp;<a href="http://pjvilloud.github.io" target="_blank">http://pjvilloud.github.io</a></h3>
+                </div>
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <div id="introduction" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Introduction</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;L’architecture logicielle décrit d’une manière symbolique et schématique les différents éléments d’un ou de plusieurs systèmes informatiques, leurs interrelations et leurs interactions - <a href="https://fr.wikipedia.org/wiki/Architecture_logicielle" target="_blank">Wikipedia</a>
+            </div>
+            <div class="container big-top-margin">
+                <p>Un système informatique comporte donc généralement les couches suivantes : </p>
+                <ul class="list-group">
+                    <li class="list-group-item">Présentation</li>
+                    <li class="list-group-item">Traitement</li>
+                    <li class="list-group-item">Données</li>
+                </ul>
+            </div>
+            <div class="alert alert-primary small-font big-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures logicielles diffèrent dans la manière de représenter, concevoir, développer et faire communiquer ces différentes couches.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="introduction-historique" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Historique</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il est difficile de dresser un historique des différents types d'architectures car ces derniers ont cohabités, évolués et se sont enrichis au fil des années. Voici une tentative :
+            </div>
+          </div>
+          <div class="container text-left ">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>1960 - 1975</strong> : Architecture centralisée avec les <em>mainframes</em> et clients passifs</b></li>
+                <li class="list-group-item"><strong>1975 - 1990</strong> : Architectures décentralisées : architecture orientée objet et architecture centrée sur les données</b></li>
+                <li class="list-group-item"><strong>1990 - 2000</strong> : Architecture centralisée avec l'explosion du Web et de l'architecture client-serveur.</li>
+                <li class="list-group-item"><strong>2000 - ?</strong> : Architectures décentralisées avec les RIA, le cloud computing, la virtualisation...</b></li>
+            </ul>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;A noter que même si de nouvelles architectures émergent régulièrement, cela ne rend pas forcément obsolète les <em>anciennes</em> architectures qui peuvent rester parfois très pertinentes suivant les objectifs et les contraintes de l'application.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="archicentralisees" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Architectures centralisées</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures centralisées regroupent physiquement et logiquement l'ensemble des fonctionnalités du système informatique.
+            </div>
+          </div>
+          <div class="container small-font">
+            <a title="By Sandstein [CC BY-SA 3.0 
+ (https://creativecommons.org/licenses/by-sa/3.0
+)], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:IBM_system_360-50_console_-_MfK_Bern.jpg"><img width="400" alt="IBM system 360-50 console - MfK Bern" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/IBM_system_360-50_console_-_MfK_Bern.jpg/512px-IBM_system_360-50_console_-_MfK_Bern.jpg"></a>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font little-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures centralisées sont historiquement les premières architectures qui ont émergées mais restent d'actualité avec l'architecture client-serveur.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="standard" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Les standards</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Avant de rentrer dans le détail des standards réseaux, voyons les différentes couches du <em>modèle OSI</em> (Open Systems Interconnection) qui standardise les échanges réseaux entre systèmes informatiques, ainsi que le modèle <em>TCP/IP</em> utilisé plus communément pour représenter le <em>modèle Internet</em>.
+            </div>
+          </div>
+          <div class="container small-font">
+            <img src="img/osimodel.png" class="little-top-margin" alt="" height="540">
+            <img src="img/ositcp.png" alt="" height="560">
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Nous allons laisser les couches <em>Transport</em>, <em>Internet</em> et <em>Accès réseau</em> pour se concentrer sur la couche <em>Application</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="standard-http" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Le protocole HTTP</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;<em>HTTP</em> ou <strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol est le protocole de communication basé sur le principe de client serveur utilisé sur le <em>World Wide Web</em>. Il existe plusieurs <em>méthodes</em> ou <em>commandes</em> que le client peut envoyer au serveur.
+            </div>
+          </div>
+          <div class="container-fluid small-font little-top-margin">
+            <div class="row">
+            <div class="col-lg-4"><img src="img/http.png" class="little-top-margin"></div>
+            <div class="col-lg-8 smaller-font text-left">
+              <div class="row">
+                <div class="col-lg-6">
+                  <pre><code>Ligne de commande (Commande, URL, Version de protocole)
+En-tête(s) de requête
+[Ligne vide]
+Corps de requête
+
+
+
+
+
+
+Ligne de statut (Version, Code-réponse, Texte-réponse)
+En-tête(s) de réponse
+[Ligne vide]
+Corps de réponse</code></pre>
+                </div>
+                <div class="col-lg-6">
+                  <pre><code>GET /page.html HTTP/1.0
+Host: example.com
+Referer: http://example.com/
+User-Agent: CERN-LineMode/2.15 libwww/2.17b3
+
+
+
+
+
+
+HTTP/1.0 200 OK
+Date: Fri, 31 Dec 1999 23:59:59 GMT
+Server: Apache/0.8.4
+Content-Type: text/html
+Content-Length: 59
+Expires: Sat, 01 Jan 2000 00:59:59 GMT
+Last-modified: Fri, 09 Aug 1996 14:21:40 GMT
+
+&lt;TITLE&gt;Exemple&lt;/TITLE&gt;
+&lt;P&gt;Ceci est une page d'exemple.&lt;/P&gt;
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Nous allons voir maintenant les différentes méthodes (ou commandes) ainsi que les codes réponses.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div id="standard-methodes" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Méthodes HTTP</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voici les méthodes possibles avec le standard HTTP
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-success"><strong>GET</strong> : Méthode la plus courante, utilise pour demander une ressource sans modifier cette dernière.</li>
+            <li class="list-group-item list-group-item-warning"><strong>POST</strong> : Méthode utilisée pour transmettre des données impliquant une création ou une modification sur une ressource</li>
+            <li class="list-group-item list-group-item-warning"><strong>PUT</strong> : Méthode utilisée pour remplacer totalement ou ajouter une ressource</li>
+            <li class="list-group-item list-group-item-warning"><strong>PATCH</strong> : Méthode utilisée pour remplacer partiellement une ressource</li>
+            <li class="list-group-item list-group-item-danger"><strong>DELETE</strong> : Méthode utilisée pour supprimer une ressource</li>
+            <li class="list-group-item">HEAD, OPTIONS, CONNECT, TRACE...</li>
+          </ul>
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp; Les méthodes <span class="text-warning">POST, PUT et PATCH</span> requièrent un corps de requête contenant les données à envoyer au serveur.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="standard-formats" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Format des données échangées</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les données échangées (envoyées dans une requête HTTP, ou reçues dans une réponse HTTP) peuvent prendre plusieurs formats.
+          </div>
+        </div>
+        <div class="container-fluid small-font row">
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item"><br><br><br>Consultation d'une page web<br><br><br><br></li>
+            <li class="list-group-item">Formulaire</li>
+            <li class="list-group-item"><br><br><br><br>Web Service<br><br><br><br><br></li>
+          </ul>
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item"><code>image/png<br><br>text/html<br><br>text/javascript<br><br>text/css<br></code></li>
+            <li class="list-group-item"><code>application/x-www-form-urlencoded</code></li>
+            <li class="list-group-item"><code><br><br><br><br>application/json</code> ou <code>application/xml</code><br><br><br><br><br></li>
+          </ul>
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item text-left"><pre><code class="html no-bottom-margin">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;&lt;title&gt;Titre&lt;/title&gt;&lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></li>
+            <li class="list-group-item">marque=Peugeot&modele=208</li>
+            <li class="list-group-item text-left"><pre><code class="json">{
+  marque: "Peugeot",
+  modele: "208"
+}</code></pre><pre><code class="xml">&lt;vehicule&gt;
+  &lt;marque&gt;Peugeot&lt;/marque&gt;
+  &lt;modele&gt;208&lt;/modele&gt; 
+&lt;/vehicule&gt;</code></pre></li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Lorsqu'il y a échange de données, le <em>client</em> ou le <em>serveur</em> doit spécifier dans l'en-tête <em>Content-Type</em> le type des données qu'il envoie.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="standard-errors" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Codes erreurs HTTP</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voici les différents codes erreurs que peut retourner une requête HTTP
+          </div>
+        </div>
+        <div class="container-fluid small-font row big-top-margin">
+          <ul class="list-group col-lg-4">
+            <li class="list-group-item list-group-item-success">2xx : Requête OK !</li>
+            <li class="list-group-item list-group-item-warning">3xx : Redirections</li>
+            <li class="list-group-item list-group-item-danger">4xx : Erreurs client</li>
+            <li class="list-group-item list-group-item-danger">5xx : Erreurs serveur</li>
+          </ul>
+          <ul class="list-group col-lg-8">
+            <li class="list-group-item list-group-item-success">200 OK, 204 NO Content</li>
+            <li class="list-group-item list-group-item-warning">301 Moved Permanently, 302 Moved Temporarily</li>
+            <li class="list-group-item list-group-item-danger">400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict</li>
+            <li class="list-group-item list-group-item-danger">500 Internal Server Error</li>
+          </ul>
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp; Il y en a beaucoup <a href="https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP" target="_blank">d'autres</a>...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="archiclientserveur" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Architectures client-serveur</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;L'architecture client-serveur permet à un ou plusieurs clients d'effectuer des requêtes au serveur qui lui répond. Le client peut alors interpréter la réponse.
+            </div>
+          </div>
+          <div class="container small-font">
+            <a title="By User:Mauro Bieg [LGPL (http://www.gnu.org/licenses/lgpl.html)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Server-based-network.svg"><img width="600" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Server-based-network.svg/1000px-Server-based-network.svg.png"></a>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Cette architecture basique a fait l'objet de plusieurs évolutions avec notamment la décentralisation de la couche de présentation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div id="archiclientserveur-archip2p" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Pair-à-pair</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures pair-à-pair ou <em>P2P (peer-to-peer)</em> sont particulières puisque chaque client est également serveur. Cela permet la continuité de service même en cas de défaillance d'un serveur.
+            </div>
+          </div>
+          <div class="container small-font">
+            <a title="By User:Mauro Bieg [Public domain], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:P2P-network.svg"><img height="600" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/P2P-network.svg/1000px-P2P-network.svg.png" alt=""></a>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Très utilisé pour le partage de fichier (parfois illégal...), le calcul distribué ou pour la communication, il reste marginal en entreprise pour des raisons de confidentialité.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archiclientserveur-statique" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web statique</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une application web statique consiste à effectuer des <code>GET</code> sur des ressources (pages HTML, fichiers CSS, images, éventuellement fichiers JS) servies par le serveur.
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <img src="img/cstatic.jpg" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font big-top-margin" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ce modèle montre rapidement ses limites lorsque l'on veut afficher des éléments à partir de données dynamiques. Le serveur web se contente alors de fournir les ressources.
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="archiclientserveur-1" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web dynamique serveur</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une première possibilité pour dynamiser une application web consiste à demander au serveur de générer le HTML via un langage de script. 
+          </div>
+        </div>
+        <div class="container-fluid small-font big-top-margin">
+          
+          <div class="row">
+            <div class="col-lg-4 "><img src="img/cserver.jpg" alt=""></div>
+            <div class="col-lg-8"><img src="img/pythonphp.jpg" alt="" height="275"></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font big-top-margin" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;C'est ce qu'il se passe dans une application web PHP classique. Le serveur exécute dynamiquement les scripts contenu dans les pages avant de servir le résultat au client sous forme de HTML.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="archiclientserveur-2" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web dynamique AJAX</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une deuxième possibilité qui vient souvent en complément du modèle précédent consiste à effectuer une requête au serveur en récupérant des données ou des fragments HTML afin de mettre à jour seulement une partie de la page sans nécessité de recharger toute la page.
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <img src="img/ajax.jpg" alt="">
+        </div>
+        <div class="container-fluid big-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;L'intérêt de cette technique est la réactivité de l'interface du fait de la réduction du nombres et de la taille des requêtes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="archiclientserveur-limites" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Avantages et inconvénients des architectures client-serveur</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ces architectures sont très adaptées pour les petits projets mais montrent vite leur limites à mesure que le projet grossit et/ou qu'il se complexifie.
+          </div>
+        </div>
+        <div class="container small-font text-center little-top-margin">
+            <div class="row">
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"><strong>Avantages</strong></li>
+                        <li class="list-group-item list-group-item-success">Centralisation des ressources</li>
+                        <li class="list-group-item list-group-item-success">Sécurité</li>
+                        <li class="list-group-item list-group-item-success">Administration serveur</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger"><strong>Inconvénients</strong></li>
+                        <li class="list-group-item list-group-item-danger">Multiplication des clients</li>
+                        <li class="list-group-item list-group-item-danger">Evolutions impactantes</li>
+                        <li class="list-group-item list-group-item-danger">Serveur <em>multi-casquettes</em></li>
+                        <li class="list-group-item list-group-item-danger">Coût élevé</li>
+                        <li class="list-group-item list-group-item-danger">Maillon faible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid little-top-margin">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures SOA permettent d'adresser certaines de ces lacunes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="soa" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Architecture SOA</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une architecture <strong>SOA</strong> repose sur le principe du <strong>Fournisseur/Consommateur</strong>. Elle représente une première étape dans la décentralisation des architectures.
+            </div>
+          </div>
+          <div class="container small-font text-left big-top-margin">
+            <p>Une <strong>Application</strong> est composée de <strong>Services (ou composants)</strong>. Les <strong>Fournisseurs</strong> de service exposent des <strong>Contrats</strong> qui contiennent des <strong>Schémas</strong> qui décrivent la manière d'échanger des <strong>Messages</strong> avec les <strong>Consommateurs</strong> du service.</p>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font big-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Un service est donc une <em>boite noire</em> pour les autres services qui ont juste besoin de savoir comment <strong>échanger</strong>. Ils n'ont pas besoin de savoir comment les autres services ont été développés.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="soa-concepts" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Les concepts de la SOA</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;La SOA n'a pas été standardisée mais on peut tout de même considérer les principes suivants pour pouvoir qualifier une architecture d'<em>orientée service</em>.
+            </div>
+          </div>
+          <div class="container small-font text-left">
+            <ul class="list-group">
+              <li class="list-group-item">Le contrat de service est décrit dans un ou plusieurs <em>documents</em> publiés dans un <em>annuaire</em>, qui définit le standard de communication à utiliser, ainsi que le format des échanges.</li>
+              <li class="list-group-item">Deux services qui veulent communiquer ont uniquement besoin de savoir qu'ils existent. Le contrat doit être exposé dans un format interprétable par les fournisseurs.</li>
+              <li class="list-group-item">Deux services peuvent communiquer même s'ils ne sont pas sur le même réseau (sauf contraintes de sécurité)</li>
+              <li class="list-group-item">Un service doit être pérenne et peut être consommé à n'importe quel moment. Les changements de contrats doivent être gérés.</li>
+              <li class="list-group-item">Chaque service est indépendant et encapsulé. Sa logique interne est dissimulée aux autres services.</li>
+              <li class="list-group-item">Les services sont <strong>stateless</strong> <em>"sans état"</em>, ce qui signifie que chaque appel au service est indépendant et le service n'a pas à connaître les précédents appels. </li>
+            </ul>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Certaines implémentations SOA omettent la notion d'annuaire, pas forcément utile dans toutes les applications.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="soa-ws" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Les services Web</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les services web sont une implémentation possible de l'architecture SOA. Il en existe principalement deux sortes : 
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin small-font text-left row">
+            <div class="col-lg-6">
+              <h3 class="display-4 text-center">Les services web SOAP</h3>
+              <ul class="list-group small-font">
+                <li class="list-group-item">Transport <span class="badge float-right badge-success">HTTP</span></li>
+                <li class="list-group-item">Communication : <span class="badge float-right badge-success">XML</span></li>
+                <li class="list-group-item">Description : <span class="badge float-right badge-primary">XSD</span> <span class="badge float-right badge-success">WSDL</span></li>
+                <li class="list-group-item">Découverte : <span class="badge float-right badge-success">UDDI</span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <h3 class="display-4 text-center">Les services web REST</h3>
+              <ul class="list-group small-font">
+                <li class="list-group-item">Transport <span class="badge float-right badge-success">HTTP</span></li>
+                <li class="list-group-item">Communication : <span class="badge float-right badge-primary">...</span> <span class="badge float-right badge-success">JSON</span> <span class="badge float-right badge-primary">XML</span> </li>
+                <li class="list-group-item">Description : <span class="badge float-right badge-primary">...</span> <span class="badge float-right badge-primary">Swagger</span> <span class="badge float-right badge-primary">Spring REST Docs</span> </li>
+                <li class="list-group-item">Découverte : <span class="badge float-right badge-warning">WADL</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="container-fluid big-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Nous verrons uniquement les services web REST car ils sont simples et plus utilisés de nos jours que les services web SOAP.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="soa-soap" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Services web SOAP</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voici comment fonctionne un service web SOAP
+            </div>
+          </div>
+          <div class="container-fluid small-font">
+            <img src="img/soap.png" alt="" height="750">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="soa-rest" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Services web REST</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voici comment fonctionne un service web REST
+            </div>
+          </div>
+          <div class="container small-font">
+            <img src="img/rest.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="soa-mvclient" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Application web dynamique MV* client </h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Un modèle émergeant depuis quelques années consiste à servir uniquement des ressources statiques (principalement du JS) à l'aide d'un serveur web classique. Le client s'occupe alors de générer les pages ainsi que l'arborescence du site. Lorsqu'il est nécessaire de récupérer des données dynamiquement, le client effectue des requêtes HTTP à un serveur d'application hébergeant des services Web REST.
+          </div>
+        </div>
+        <div class="container-fluid small-font">
+          <div class="row">
+            <div class="col-lg-5"><img src="img/spa.jpg" alt=""></div>
+            <div class="col-lg-7"><img src="img/mvs.png" alt=""></div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ainsi, un seul <em>gros</em> appel est effectué au serveur web afin de récupérer les ressources statiques gérées par l'application. Les appels suivants au serveur d'application ne véhiculent que les données manipulées par l'application.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="soa-limites" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Avantages et inconvénients des architectures SOA</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ces architectures présentent des avantages et des inconvénients.
+          </div>
+        </div>
+        <div class="container small-font text-left big-top-margin">
+          <div class="row">
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"><strong>Avantages</strong></li>
+                        <li class="list-group-item list-group-item-success">Utilisation de standards</li>
+                        <li class="list-group-item list-group-item-success">Flexibilité</li>
+                        <li class="list-group-item list-group-item-success">Réactivité</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger"><strong>Inconvénients</strong></li>
+                        <li class="list-group-item list-group-item-danger">Prolifération des services</li>
+                        <li class="list-group-item list-group-item-danger">Utilisation de standards</li>
+                        <li class="list-group-item list-group-item-danger">Performances avec REST</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font big-top-margin" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Cette liste est bien évidemment non exhaustive et totalement subjective...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="archidistribuees" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Architectures distribuées</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures distribuées ou architecture multi-tiers sont des architectures où les différentes couches et ressources du système informatique sont réparties sur le réseau.
+            </div>
+          </div>
+          <div class="container small-font little-top-margin">
+            <ul class="list-group">
+                <li class="list-group-item">Distribution des données</li>
+                <li class="list-group-item">Distribution des traitements</li>
+                <li class="list-group-item">Microservices</li>
+                <li class="list-group-item">Cloud computing</li>
+            </ul>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font little-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ce genre d'architecture repose fortement sur les standards de communication du web. Il n'y a pas de représentation spécifique de ce genre d'architecture puisqu'un nombre quasi-illimité de configurations existent !
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-donnees" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Distribution des données (SGBD)</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;La distribution des données consiste à mettre en place des stratégies pour parer à des éventuelles problèmes matériels, réseaux, ou de performances.
+            </div>
+          </div>
+          <div class="container  text-center big-top-margin">
+            <ul class="list-group">
+                <li class="list-group-item">La réplication</li>
+                <li class="list-group-item">Le partitionnement</li>
+                <li class="list-group-item">Le clustering</li>
+            </ul>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font big-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;La distribution des données est une étape peu impactante à mettre en place pour les autres composants car elle est généralement complètement gérée par le SGBD.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-donnees-replication" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">La réplication</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;La <strong>réplication</strong> permet de copier tout ou partie des données issues d'un serveur (maître) vers un autre serveur (esclave). Cette fonctionnalités est asynchrone, ce qui implique que le ou les esclaves ne doivent pas forcément être joignables de manière permanente. La réplication permet : 
+            </div>
+          </div>
+          <div class="container-fluid small-font ">
+            <div class="row">
+              <ul class="list-group col-lg-6 big-top-margin">
+                <li class="list-group-item"><strong>La sécurité</strong> : Les données sont dupliquées à un ou plusieurs endroits.</li>
+                <li class="list-group-item"><strong>La performance</strong> : Les données peuvent être analysés sur les esclaves sans affecter les performances du maître.</li>
+                <li class="list-group-item"><strong>La scalabilité</strong> : Les données peuvent être lues sur les esclaves en laissant les opérations de mises à jour sur le maître.</li>
+              </ul>
+              <div class="col-lg-6">
+                <img src="img/replication.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il y a plusieurs manières d'implémenter une réplication entre maître et esclave(s), voir la <a href="https://dev.mysql.com/doc/refman/5.7/en/replication.html" target="_blank">documentation</a> pour plus d'infos.
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-donnees-partitioning" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Le partitionnement</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le <strong>partitionnement</strong> permet de diviser une grosse base de données en deux ou plusieurs <em>sous-bases de données</em> cohérentes.
+            </div>
+          </div>
+          <div class="container-fluid small-font ">
+            <div class="row">
+              <ul class="list-group col-lg-6 big-top-margin">
+                <li class="list-group-item"><strong>La taille</strong> : Les éventuelles contraintes de taille sur les tables sont contournées.</li>
+                <li class="list-group-item"><strong>La performance</strong> : Les données sont réparties entre plusieurs bases pour équilibrer la charge.</li>
+              </ul>
+              <div class="col-lg-6">
+                <img src="img/partitioning.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le partitionnement peut être fait en fonction de la valeur d'une colonne, ou d'un intervalle de valeur ou encore d'autres manières décrites dans la <a href="https://dev.mysql.com/doc/refman/5.7/en/partitioning.html" target="_blank">documentation</a>.
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-donnees-clusters" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Les clusters</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les <strong>clusters</strong> permettent d'effectuer des requêtes parallèles sur plusieurs <em>nœuds</em> qui répliquent les données à l'aide d'un répartiteur de charge.
+            </div>
+          </div>
+          <div class="container-fluid small-font ">
+            <div class="row">
+              <ul class="list-group col-lg-6 big-top-margin">
+                <li class="list-group-item"><strong>La tolérance aux pannes</strong> : Les données sont toujours disponibles à condition qu'au moins un nœud soit accessible.</li>
+                <li class="list-group-item"><strong>La performance</strong> : Les requêtes peuvent être lancées en parallèle sur plusieurs noeuds.</li>
+              </ul>
+              <div class="col-lg-6">
+                <img src="img/clusters.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les clusters demandent une connaissance avancée de MySQL et des systèmes en général. Des informations approfondies peuvent être trouvées dans la  <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-innodb-cluster-userguide.html" target="_blank">documentation</a>.
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-donneesstatic" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Distribution des données (CDN)</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Un CDN ou Content Delivery Network est constitué d’ordinateurs reliés en réseau à travers Internet et qui coopèrent afin de mettre à disposition du contenu à des utilisateurs - <a href="https://fr.wikipedia.org/wiki/R%C3%A9seau_de_diffusion_de_contenu" target="_blank">Wikipedia</a>
+            </div>
+          </div>
+          <div class="container-fluid small-font">
+            <div class="row">
+                <div class="col-6">
+                    <img src="img/cdn.png" alt="">
+                </div>
+                <div class="col-6 big-top-margin">
+                    <ul class="list-group little-top-margin">
+                        <li class="list-group-item">Stockage des ressources au plus près des utilisateurs</li>
+                        <li class="list-group-item">Mise en cache des ressources</li>
+                        <li class="list-group-item">Accélération web et mobile</li>
+                        <li class="list-group-item">Sécurité anti DDOS et WAF</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une grosse partie des ressources des sites Internet sont aujourd'hui hébergées sur des CDNs. 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-micro" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Micro-services</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures micro-services permettent de développer et manager des applications diverses constituées de multiples services indépendants mais complémentaires, développé dans diverses technologies mais interopérables grâce aux standards de communication.
+            </div>
+          </div>
+          <div class="container small-font text-left little-top-margin">
+            <ul class="list-group">
+                <li class="list-group-item">Augmentation de la dette technique des applications monolithiques au fur et à mesure de leur maintenance.</li>
+                <li class="list-group-item">Évolutions très rapides des technologies pouvant les rendre rapidement obsolète ou plus supportées.</li>
+                <li class="list-group-item">Processus de déploiements lourds et impactant</li>
+                <li class="list-group-item">Besoin de réactivité dans la résolution des anomalies et les nouvelles fonctionnalités.</li>
+                <li class="list-group-item">Phase d'analyse et choix de l'architecture décisifs en amont du projet.</li>
+            </ul>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font little-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures micro-services bien ont pour objectif d'adresser ces problématiques en réduisant la complexité.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-micro-ex" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Micro-services</h1>
+          <div class="container-fluid">
+            <img src="img/microservices-infographic.png" width="1500" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-micro-principes" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Principes</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures micro-services ne sont pas normalisées mais des précurseurs tels que Git, Airbnb ou Netflix, de par leurs fortes contraintes ont ouvert la voie des micro-services.
+            </div>
+          </div>
+          <div class="container small-font big-top-margin">
+            <ul class="list-group">
+                <li class="list-group-item" data-toggle="popover" data-offset="0" data-trigger="hover click" data-placement="top" data-html="true"
+                    data-title="Cohésion" data-content="<img src='img/cohesion.png'/>">Responsabilité et cohésion interne</li>
+                <li class="list-group-item">Indépendance et couplage faible</li>
+                <li class="list-group-item">Communication réseaux et services distribués</li>
+            </ul>
+          </div>
+          <div class="container-fluid big-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Voyons maintenant les avantages et inconvénients de ce type d'architecture.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-micro-avantages" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Avantages</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures micro-services induisent de nombreux bénéfices.
+            </div>
+          </div>
+          <div class="container small-font little-top-margin">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">Choix des technologies quasi-illimité</li>
+                <li class="list-group-item list-group-item-success">Facilité à paralléliser les développements</li>
+                <li class="list-group-item list-group-item-success">Temps de mise sur le marché réduit</li>
+                <li class="list-group-item list-group-item-success">Granularité permettant un <em>tuning</em> précis et efficace pour la réplication</li>
+                <li class="list-group-item list-group-item-success">Performances accrues car souvent <em>stateless</em></li>
+                <li class="list-group-item list-group-item-success">Maintenance et évolutions plus aisées du fait de la complexité plus faible</li>
+                <li class="list-group-item list-group-item-success">Processus de déploiements moins impactant, moins longs donc moins risqués.</li>
+            </ul>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ces éléments sont très importants dans le contexte actuel de digitalisation et d'instantanéité.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-micro-difficultes" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Difficultés</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;L'utilisation des micro-services n'est pas miraculeuse et soulève des problématiques importantes. 
+            </div>
+          </div>
+          <div class="container small-font little-top-margin">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-danger" data-toggle="popover" data-offset="0" data-trigger="hover click" data-placement="right" data-html="true"
+                    data-title="Domain Driven Design" data-content="<img src='img/ddd.jpg'>">Difficultés à dégager des services indépendants et cohérents.</li>
+                <li class="list-group-item list-group-item-danger">La communication entre micro-services doit-être rigoureusement développées et documentée.</li>
+                <li class="list-group-item list-group-item-danger">Problématiques de performances dans les échanges (parfois distants).</li>
+                <li class="list-group-item list-group-item-danger">Cohérence des données et données <em>communes</em></li>
+                <li class="list-group-item list-group-item-danger">Maturité et autonomie des équipes de développement.</li>
+                <li class="list-group-item list-group-item-danger">Nécessité de compétences sur l'ensemble des technologies utilisées.</li>
+                <li class="list-group-item list-group-item-danger">Besoin de process de déploiement automatisés, rapides, fiables et rigoureux</li>
+                <li class="list-group-item list-group-item-danger">Difficultés à effectuer des tests d'intégration</li>
+                <li class="list-group-item list-group-item-danger">Monitoring des micro-services quasi-indispensables</li>
+            </ul>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;De nombreuses solutions existent pour limiter l'impact de ces problématiques.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-clients" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Distribution des traitements</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;
+            </div>
+          </div>
+          <div class="container small-font text-left">
+            <ul class="list-group">
+                <li class="list-group-item">Redondance par </li>
+            </ul>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-cloud" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Cloud computing</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures vues précédemment requièrent de bonnes connaissances en administration si l'on souhaite avoir des systèmes tolérants aux pannes, performants et scalables tout en maîtrisant les coûts... Google, Amazon ou Microsoft propose des services de IaaS ou de PaaS avec des coûts en fonction de l'utilisation des services (bande passante, durée d'utilisation, temps consommés).
+            </div>
+          </div>
+          <div class="container small-font little-top-margin">
+            <img src="img/iaas-paas-saas.png" height="450" alt="">
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font little-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;L'utilisation de ce type de services est intéressante car la complexité de l'infrastructure est complètement gérée par le prestataire. En revanche, on perd en terme de contrôle...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-cloud-1" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Ex: application Web full cloud</h1>
+          <div class="container-fluid small-font text-center">
+            <img src="img/heb-cloud.png" height="800" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-cloud-2" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Ex: application Web serverless full cloud</h1>
+          <div class="container-fluid small-font text-center">
+            <img src="resources/serverless.png" height="800" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="archidistribuees-avantages" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Avantages et inconvénients des architectures distribuées</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les architectures distribuées sont implémentées de multiples manières ! Voici quelques avantages et inconvénients à l'utilisation de ce type d'architecture
+            </div>
+          </div>
+          <div class="container small-font text-left">
+            <pre><code class="java"></code></pre>
+          </div>
+          <div class="container-fluid small-font">
+                <div class="row">
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"><strong>Avantages</strong></li>
+                        <li class="list-group-item list-group-item-success">Répartition des données et des services</li>
+                        <li class="list-group-item list-group-item-success">Evolutions peu impactantes</li>
+                        <li class="list-group-item list-group-item-success">Continuité de service</li>
+                        <li class="list-group-item list-group-item-success">Possibilités infinies !</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger"><strong>Inconvénients</strong></li>
+                        <li class="list-group-item list-group-item-danger">Multitude de points d'entrée</li>
+                        <li class="list-group-item list-group-item-danger">Cohabitation de multiples technologies</li>
+                        <li class="list-group-item list-group-item-danger">Rigueur nécessaire dans les processus de développements</li>
+                        <li class="list-group-item list-group-item-danger">Dépendance à un prestataire dans le cadre de cloud computing</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font little-top-margin" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il s'agit donc de trouver le bon équilibre coût-maîtrise-performance. Une architecture distribuée étant pas nature multiple et dynamique, la <em>bonne</em> solution peut être une combinaison des architectures présentées dans ce cours :)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+<script src="js/impress.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/script.js"></script>
+</body>
